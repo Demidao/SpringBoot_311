@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="../../css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+    <title>Update user</title>
+</head>
+<body>
+<div>
+    <form th:method="POST" th:action="@{/admin/{id}(id=${user.getUser_id()})}" th:object="${user}">
+        <input type="hidden" name="user_id" th:value="${user.getUser_id()}">
+
+        <div>
+            <label for="firstname">Enter firstname: </label>
+            <input type="text" th:field="*{firstname}" id="firstname"/>
+            <div style="color:red" th:if="${#fields.hasErrors('firstname')}" th:errors="*{firstname}">firstname Error
+            </div>
+        </div>
+        </br>
+        <div>
+            <label for="lastname">Enter lastname: </label>
+            <input type="text" th:field="*{lastname}" id="lastname"/>
+            <div style="color:red" th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}">Lastname Error</div>
+        </div>
+        </br>
+        <div>
+            <label for="age">Enter age: </label>
+            <input type="text" th:field="*{age}" id="age"/>
+            <div style="color:red" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age Error</div>
+        </div>
+        </br>
+        <div>
+            <label for="email">Enter email: </label>
+            <input type="text" th:field="*{email}" id="email"/>
+            <div style="color:red" th:if="${#fields.hasErrors('Email')}" th:errors="*{email}">Email Error</div>
+        </div>
+        </br>
+        <div>
+            <label for="password">Enter new password: </label>
+            <input type="password" th:field="*{password}" id="password" placeholder="Enter password"/>
+            <div style="color:red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</div>
+        </div>
+        </br>
+        <label>
+            <input type="checkbox" name="role" th:checked="${isAdmin}" th:value="ROLE_ADMIN" th:text="Admin">
+        </label>
+        <hr/>
+        <input type="submit" value="Update!"/>
+    </form>
+    </hr>
+</div>
+<a href="/logout" class="button24">LOGOUT</a>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <link href="../../css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+    <title>User</title>
+</head>
+<body>
+<table class="table">
+    <thead>
+    <tr>
+        <td>ID</td>
+        <td>Firstname</td>
+        <td>Lastname</td>
+        <td>Age</td>
+        <td>email</td>
+    </tr>
+    </thead>
+    <tr>
+        <td><p th:text="${user.getUser_id()}">ID</td>
+        <td><p th:text="${user.getFirstname()}">name</td>
+        <td><p th:text="${user.getLastname()}">lastname</td>
+        <td><p th:text="${user.getAge()}">Age</td>
+        <td><p th:text="${user.getEmail()}">email</td>
+    </tr>
+</table>
+</br>
+
+<hr/>
+<a href="/logout" class="button24">LOGOUT</a>
+<hr/>
+<a href="/" class="button24">HOME</a>
+<hr/>
+<a href="/admin" class="button24">ADMIN</a>
+</body>
+</html>

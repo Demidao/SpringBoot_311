@@ -1,0 +1,69 @@
+body {
+    background-color: #f2f2f2;
+    font-family: "Lato";
+    font-weight: 300;
+    font-size: 16px;
+    color: #555;
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 70px;
+}
+
+/* Titles */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Raleway";
+    font-weight: 300;
+    color: #333;
+}
+
+/* Paragraph & Typographic */
+
+p {
+    line-height: 28px;
+    margin-bottom: 5px;
+}
+
+
+.table {
+    text-align: left;
+    border-collapse: separate;
+    border-spacing: 5px;
+    background: #ECE9E0;
+    color: #656665;
+    border: 16px solid #ECE9E0;
+    border-radius: 20px;
+}
+
+.table th {
+    font-size: 18px;
+    padding: 10px;
+}
+
+.table td {
+    background: #F5D7BF;
+    padding: 10px;
+}
+
+
+a.button24 {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: .5em 2em;
+    outline: none;
+    border-width: 2px 0;
+    border-style: solid none;
+    border-color: #FDBE33 #000 #D77206;
+    border-radius: 6px;
+    background: linear-gradient(#F3AE0F, #E38916) #E38916;
+    transition: 0.2s;
+}
+
+a.button24:hover {
+    background: linear-gradient(#f5ae00, #f59500) #f5ae00;
+}
+
+a.button24:active {
+    background: linear-gradient(#f59500, #f5ae00) #f59500;
+}

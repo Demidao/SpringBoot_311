@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <link href="../../css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+    <title>All users</title>
+
+</head>
+<body>
+<div>
+    <br/>
+    <a href="/admin/new" class="button24">Create new user</a>
+    <a href="/logout" class="button24">LOGOUT</a>
+    <hr/>
+    <table class="table">
+        <thead>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Lastname</td>
+            <td>Age</td>
+            <td>email</td>
+            <td>Admin</td>
+            <td>Info</td>
+            <td>Delete</td>
+            <td>Update</td>
+        </tr>
+        </thead>
+
+        <div th:each="user : ${userList}">
+            <tr>
+                <td><p th:text="${user.getUser_id()}">ID</p></td>
+                <td><p th:text="${user.getFirstname()}">Firstname</p></td>
+                <td><p th:text="${user.getLastname()}">Lastname</p></td>
+                <td><p th:text="${user.getAge()}">age</p></td>
+                <td><p th:text="${user.getEmail()}">email</p></td>
+                <td><p th:text="${user.isAdmin()} ? 'YES': 'NO'">isAdmin</p></td>
+                <td><a class="button24" th:href="@{/users/{id}(id=${user.getUser_id()})}">Info</a></td>
+                <td><a class="button24" th:href="@{/admin/delete/{id}(id=${user.getUser_id()})}">Delete</a></td>
+                <td><a class="button24" th:href="@{/admin/edit/{id}(id=${user.getUser_id()})}">Edit</a></td>
+            </tr>
+        </div>
+    </table>
+</div>
+<br/>
+
+</body>
+</html>
